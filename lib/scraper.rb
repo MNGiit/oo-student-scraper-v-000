@@ -33,7 +33,9 @@ class Scraper
     add_items(get_doc(profile_url), student)
     student
   end
-
+#
+#
+#
   def self.get_doc(profile_url)
     doc = Nokogiri::HTML(File.read(profile_url)) #below is older way of doing it
     #html = File.read(profile_url)
