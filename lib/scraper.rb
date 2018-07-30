@@ -65,6 +65,12 @@ class Scraper
     #add_student_bio(doc, student)    
   end
 
+  def self.get_doc(profile_url)
+    doc = Nokogiri::HTML(File.read(profile_url)) #below is older way of doing it
+    #html = File.read(profile_url)
+    #doc = Nokogiri::HTML(html)       
+  end
+
   def self.collect_links(doc)
     doc.css(".social-icon-container").children.css("a").map { |item| item.attribute('href').value}
     
@@ -105,10 +111,5 @@ class Scraper
     add_student_bio(doc, student)    
   end
 
-  def self.get_doc(profile_url)
-    doc = Nokogiri::HTML(File.read(profile_url)) #below is older way of doing it
-    #html = File.read(profile_url)
-    #doc = Nokogiri::HTML(html)       
-  end
 end
 
