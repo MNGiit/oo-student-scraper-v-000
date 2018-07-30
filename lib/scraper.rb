@@ -74,7 +74,7 @@ class Scraper
     #doc.css(".social-icon-container").children.css("a").map { |item| item.attribute('href').value}
     #long way of writing this
     #REMEMBER .map is the same as .collect
-    doc.css(".social-icon-container").children.css("a").each.map |item|
+    doc.css(".social-icon-container").children.css("a").map do |item|
      item.attribute('href').value
     end
   end
