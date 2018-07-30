@@ -32,8 +32,8 @@ class Scraper
 
     student = {}
     
-    html = File.read(profile_url)
-    doc = Nokogiri::HTML(html)
+    #html = File.read(profile_url)
+    #doc = Nokogiri::HTML(html)
     
     doc = Nokogiri::HTML(File.read(profile_url))
     
