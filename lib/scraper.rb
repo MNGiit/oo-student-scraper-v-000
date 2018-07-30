@@ -84,7 +84,7 @@ class Scraper
   
   def self.add_links(search)
     search.each do |link|
-      
+      if link.include?
     end
   end
 end
