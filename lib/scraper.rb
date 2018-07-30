@@ -81,7 +81,7 @@ class Scraper
     #end
   end
   
-  def self.add_links(search, student)
+  def self.add_links(search, student) #local variable student messing me up...
     search.each do |link|
       if link.include?("twitter")
         student[:twitter] = link
