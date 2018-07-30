@@ -35,7 +35,7 @@ class Scraper
     doc = Nokogiri::HTML(File.read(profile_url))
     
     scraped_links = doc.css(".social-icon-container").children.css("a")
-    
+    binding.pry
     student[:twitter] = doc.css(".social-icon-container").children.css("a").attribute("href").value
     
     student[:linkedin] = doc.css(".social-icon-container").children.css("a")[1].attribute("href").value
