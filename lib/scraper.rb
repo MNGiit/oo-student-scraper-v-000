@@ -55,9 +55,9 @@ class Scraper
     #  student[:blog] = doc.css(".social-icon-container").children.css("a")[3].attribute("href").value
     #end
 
-    if doc.css("div.bio-content.content-holder div.description-holder p").text
-      student[:bio] = doc.css("div.bio-content.content-holder div.description-holder p").text
-    end
+    #if doc.css("div.bio-content.content-holder div.description-holder p").text
+    #  student[:bio] = doc.css("div.bio-content.content-holder div.description-holder p").text
+    #end
 
     student
     
