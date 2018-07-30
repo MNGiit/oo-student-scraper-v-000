@@ -94,6 +94,10 @@ class Scraper
       end
     end
   end
-
+  
+  def self.add_profile_quote(doc, student)
+    student[:profile_quote] = doc.css(".profile-quote").text #if doc.css(".profile-quote")      
+  end  
+  
 end
 
