@@ -29,40 +29,11 @@ class Scraper
   end
 
   def self.scrape_profile_page(profile_url)
-
     student = {}
-    
-    #doc = get_doc(profile_url)
-    #doc = Nokogiri::HTML(File.read(profile_url)) #check old code for previous version
     add_items(get_doc(profile_url), student)
-    #add_items(doc, student)
+
     student
     
-    #old code
-    #scraped_twitter = doc.css(".social-icon-container").children.css("a").attribute("href").value   
-    #scraped_linkedin = doc.css(".social-icon-container").children.css("a")[1].attribute("href").value
-    #scraped_blog = doc.css(".social-icon-container").children.css("a")[3].attribute("href").value 
-    #scraped_profile_quote = doc.css(".profile-quote").text #if doc.css(".profile-quote")    
-    #scraped_github = doc.css(".social-icon-container").children.css("a")[2].attribute("href").value    
-    #student[:bio] = doc.css(".description-holder").text #if doc.css(".description-holder").text
-    #scraped_bio = doc.css(".description-holder").text #if doc.css(".description-holder").text
-    #scraped_links = doc.css(".social-icon-container").children.css("a")       
-    #student = {twitter: scraped_twitter, linkedin: scraped_linkedin, github: scraped_github, blog: scraped_blog, profile_quote: scraped_profile_quote, bio: scraped_bio} 
-    #student[:twitter] = doc.css(".social-icon-container").children.css("a").attribute("href").value
-    #student[:linkedin] = doc.css(".social-icon-container").children.css("a")[1].attribute("href").value
-    #if doc.css(".social-icon-container").children.css("a")[2]
-    #  student[:github] = doc.css(".social-icon-container").children.css("a")[2].attribute("href").value
-    #end
-    #if doc.css(".social-icon-container").children.css("a")[3]
-    #  student[:blog] = doc.css(".social-icon-container").children.css("a")[3].attribute("href").value
-    #end
-    #student[:profile_quote] = doc.css(".profile-quote").text #if doc.css(".profile-quote")       
-    #student[:bio] = doc.css("div.bio-content.content-holder div.description-holder p").text 
-    #links_found = collect_links(doc) 
-    #add_links(links_found, student)
-    #add_links(collect_links(doc), student)
-    #add_profile_quote(doc, student)
-    #add_student_bio(doc, student)    
   end
 
   def self.get_doc(profile_url)
