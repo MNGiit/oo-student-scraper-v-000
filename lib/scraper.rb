@@ -71,12 +71,13 @@ class Scraper
   end
 
   def self.collect_links(doc)
-    #doc.css(".social-icon-container").children.css("a").map { |item| item.attribute('href').value}
+    doc.css(".social-icon-container").children.css("a").map { |item| item.attribute('href').value}
+    
     #long way of writing this
     #REMEMBER .map is the same as .collect
-    doc.css(".social-icon-container").children.css("a").map do |item|
-     item.attribute('href').value
-    end
+    #doc.css(".social-icon-container").children.css("a").map do |item|
+    # item.attribute('href').value
+    #end
   end
 
 end
