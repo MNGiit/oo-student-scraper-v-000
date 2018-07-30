@@ -37,13 +37,11 @@ class Scraper
     #links_found = collect_links(doc) 
     #add_links(links_found, student)
     
-    add_links(collect_links(doc), student)
-    add_profile_quote(doc, student)
-    add_student_bio(doc, student)
+    #add_links(collect_links(doc), student)
+    #add_profile_quote(doc, student)
+    #add_student_bio(doc, student)
     
-    #student[:profile_quote] = doc.css(".profile-quote").text #if doc.css(".profile-quote")       
-    #student[:bio] = doc.css("div.bio-content.content-holder div.description-holder p").text    
-    
+    add_items(doc, student)
     student
     
     #old code
@@ -66,6 +64,8 @@ class Scraper
     #if doc.css(".social-icon-container").children.css("a")[3]
     #  student[:blog] = doc.css(".social-icon-container").children.css("a")[3].attribute("href").value
     #end
+    #student[:profile_quote] = doc.css(".profile-quote").text #if doc.css(".profile-quote")       
+    #student[:bio] = doc.css("div.bio-content.content-holder div.description-holder p").text      
   end
 
   def self.collect_links(doc)
@@ -101,5 +101,12 @@ class Scraper
     #  student[:bio] = doc.css("div.bio-content.content-holder div.description-holder p").text
     #end        
   end
+  
+  def self.add_items(doc, student)
+    add_links(collect_links(doc), student)
+    add_profile_quote(doc, student)
+    add_student_bio(doc, student)    
+  end
+  
 end
 
