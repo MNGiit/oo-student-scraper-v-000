@@ -32,11 +32,13 @@ class Scraper
 
     student = {}
     
-    doc = Nokogiri::HTML(File.read(profile_url))
+    doc = Nokogiri::HTML(File.read(profile_url)) #check old code for previous version
     
-    scraped_links = doc.css(".social-icon-container").children.css("a")
     links_found = collect_links(doc) 
+    add_links(collect_links(doc))
     binding.pry
+    
+    scraped_links = doc.css(".social-icon-container").children.css("a")    
     student[:twitter] = doc.css(".social-icon-container").children.css("a").attribute("href").value
     
     student[:linkedin] = doc.css(".social-icon-container").children.css("a")[1].attribute("href").value
@@ -79,6 +81,11 @@ class Scraper
     # item.attribute('href').value
     #end
   end
-
+  
+  def self.add_links(search)
+    search.each do |link|
+      
+    end
+  end
 end
 
