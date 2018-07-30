@@ -59,14 +59,13 @@ class Scraper
     if doc.css("div.bio-content.content-holder div.description-holder p").text
       student[:bio] = doc.css("div.bio-content.content-holder div.description-holder p").text
     end
-    #student[:bio] = doc.css(".description-holder").text #if doc.css(".description-holder").text
-    #scraped_bio = doc.css(".description-holder").text #if doc.css(".description-holder").text
     
     student
-    #binding.pry
     
-    #student = {twitter: scraped_twitter, linkedin: scraped_linkedin, github: scraped_github, blog: scraped_blog, profile_quote: scraped_profile_quote, bio: scraped_bio}
-    #binding.pry
+    #old code
+    #student[:bio] = doc.css(".description-holder").text #if doc.css(".description-holder").text
+    #scraped_bio = doc.css(".description-holder").text #if doc.css(".description-holder").text
+    #student = {twitter: scraped_twitter, linkedin: scraped_linkedin, github: scraped_github, blog: scraped_blog, profile_quote: scraped_profile_quote, bio: scraped_bio}   
   end
 
 end
