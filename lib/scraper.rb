@@ -39,10 +39,12 @@ class Scraper
     
     add_links(collect_links(doc), student)
     student[:profile_quote] = doc.css(".profile-quote").text if doc.css(".profile-quote")    
+    student[:bio] = doc.css("div.bio-content.content-holder div.description-holder p").text    
     student
     binding.pry
     
     scraped_links = doc.css(".social-icon-container").children.css("a")    
+    
     #student[:twitter] = doc.css(".social-icon-container").children.css("a").attribute("href").value
     #student[:linkedin] = doc.css(".social-icon-container").children.css("a")[1].attribute("href").value
     #if doc.css(".social-icon-container").children.css("a")[2]
