@@ -45,16 +45,6 @@ class Scraper
     
     scraped_links = doc.css(".social-icon-container").children.css("a")    
     
-    #student[:twitter] = doc.css(".social-icon-container").children.css("a").attribute("href").value
-    #student[:linkedin] = doc.css(".social-icon-container").children.css("a")[1].attribute("href").value
-    #if doc.css(".social-icon-container").children.css("a")[2]
-    #  student[:github] = doc.css(".social-icon-container").children.css("a")[2].attribute("href").value
-    #end
-
-    #if doc.css(".social-icon-container").children.css("a")[3]
-    #  student[:blog] = doc.css(".social-icon-container").children.css("a")[3].attribute("href").value
-    #end
-
     #if doc.css("div.bio-content.content-holder div.description-holder p").text
     #  student[:bio] = doc.css("div.bio-content.content-holder div.description-holder p").text
     #end
@@ -71,7 +61,16 @@ class Scraper
     #scraped_github = doc.css(".social-icon-container").children.css("a")[2].attribute("href").value    
     #student[:bio] = doc.css(".description-holder").text #if doc.css(".description-holder").text
     #scraped_bio = doc.css(".description-holder").text #if doc.css(".description-holder").text
-    #student = {twitter: scraped_twitter, linkedin: scraped_linkedin, github: scraped_github, blog: scraped_blog, profile_quote: scraped_profile_quote, bio: scraped_bio}   
+    #student = {twitter: scraped_twitter, linkedin: scraped_linkedin, github: scraped_github, blog: scraped_blog, profile_quote: scraped_profile_quote, bio: scraped_bio} 
+    #student[:twitter] = doc.css(".social-icon-container").children.css("a").attribute("href").value
+    #student[:linkedin] = doc.css(".social-icon-container").children.css("a")[1].attribute("href").value
+    #if doc.css(".social-icon-container").children.css("a")[2]
+    #  student[:github] = doc.css(".social-icon-container").children.css("a")[2].attribute("href").value
+    #end
+    #if doc.css(".social-icon-container").children.css("a")[3]
+    #  student[:blog] = doc.css(".social-icon-container").children.css("a")[3].attribute("href").value
+    #end
+    
   end
 
   def self.collect_links(doc)
