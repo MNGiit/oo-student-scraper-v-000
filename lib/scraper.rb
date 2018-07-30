@@ -34,13 +34,6 @@ class Scraper
     
     doc = Nokogiri::HTML(File.read(profile_url)) #check old code for previous version
     
-    #links_found = collect_links(doc) 
-    #add_links(links_found, student)
-    
-    #add_links(collect_links(doc), student)
-    #add_profile_quote(doc, student)
-    #add_student_bio(doc, student)
-    
     add_items(doc, student)
     student
     
@@ -65,7 +58,12 @@ class Scraper
     #  student[:blog] = doc.css(".social-icon-container").children.css("a")[3].attribute("href").value
     #end
     #student[:profile_quote] = doc.css(".profile-quote").text #if doc.css(".profile-quote")       
-    #student[:bio] = doc.css("div.bio-content.content-holder div.description-holder p").text      
+    #student[:bio] = doc.css("div.bio-content.content-holder div.description-holder p").text 
+    #links_found = collect_links(doc) 
+    #add_links(links_found, student)
+    #add_links(collect_links(doc), student)
+    #add_profile_quote(doc, student)
+    #add_student_bio(doc, student)    
   end
 
   def self.collect_links(doc)
