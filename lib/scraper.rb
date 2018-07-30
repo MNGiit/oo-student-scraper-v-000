@@ -40,17 +40,15 @@ class Scraper
     binding.pry
     
     scraped_links = doc.css(".social-icon-container").children.css("a")    
-    student[:twitter] = doc.css(".social-icon-container").children.css("a").attribute("href").value
-    
-    student[:linkedin] = doc.css(".social-icon-container").children.css("a")[1].attribute("href").value
+    #student[:twitter] = doc.css(".social-icon-container").children.css("a").attribute("href").value
+    #student[:linkedin] = doc.css(".social-icon-container").children.css("a")[1].attribute("href").value
+    #if doc.css(".social-icon-container").children.css("a")[2]
+    #  student[:github] = doc.css(".social-icon-container").children.css("a")[2].attribute("href").value
+    #end
 
-    if doc.css(".social-icon-container").children.css("a")[2]
-      student[:github] = doc.css(".social-icon-container").children.css("a")[2].attribute("href").value
-    end
-
-    if doc.css(".social-icon-container").children.css("a")[3]
-      student[:blog] = doc.css(".social-icon-container").children.css("a")[3].attribute("href").value
-    end
+    #if doc.css(".social-icon-container").children.css("a")[3]
+    #  student[:blog] = doc.css(".social-icon-container").children.css("a")[3].attribute("href").value
+    #end
 
     student[:profile_quote] = doc.css(".profile-quote").text if doc.css(".profile-quote")
 
@@ -95,5 +93,6 @@ class Scraper
       end
     end
   end
+
 end
 
