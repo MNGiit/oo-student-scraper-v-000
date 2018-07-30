@@ -35,7 +35,7 @@ class Scraper
     doc = Nokogiri::HTML(File.read(profile_url)) #check old code for previous version
     
     links_found = collect_links(doc) 
-    add_links(links_found)
+    add_links(links_found, student)
     student
     binding.pry
     
