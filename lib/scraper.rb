@@ -35,7 +35,7 @@ class Scraper
     doc = Nokogiri::HTML(File.read(profile_url))
     
     scraped_links = doc.css(".social-icon-container").children.css("a")
-    scraped_links_two = doc.css(".social-icon-container").children.css("a").collect 
+    links_found = collect_links(doc) 
     binding.pry
     student[:twitter] = doc.css(".social-icon-container").children.css("a").attribute("href").value
     
@@ -70,8 +70,8 @@ class Scraper
     #student = {twitter: scraped_twitter, linkedin: scraped_linkedin, github: scraped_github, blog: scraped_blog, profile_quote: scraped_profile_quote, bio: scraped_bio}   
   end
 
-  def collect_links(document)
-    
+  def collect_links(doc)
+    doc.css(".social-icon-container").children.css("a").map { |item| item.attribute('href').value}    
   end
 
 end
