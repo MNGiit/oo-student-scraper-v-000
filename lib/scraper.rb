@@ -32,7 +32,8 @@ class Scraper
 
     student = {}
     
-    doc = Nokogiri::HTML(File.read(profile_url)) #check old code for previous version
+    doc = get_doc(profile_url)
+    #doc = Nokogiri::HTML(File.read(profile_url)) #check old code for previous version
     
     add_items(doc, student)
     student
@@ -107,7 +108,7 @@ class Scraper
   end
 
   def self.get_doc(profile_url)
-    
+    doc = Nokogiri::HTML(File.read(profile_url)) #check old code for previous version    
   end
 end
 
