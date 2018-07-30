@@ -105,6 +105,9 @@ class Scraper
     add_profile_quote(doc, student)
     add_student_bio(doc, student)    
   end
-  
+
+  def self.get_doc(profile_url)
+    
+  end
 end
 
