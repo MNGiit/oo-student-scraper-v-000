@@ -41,7 +41,7 @@ class Scraper
     student[:profile_quote] = doc.css(".profile-quote").text if doc.css(".profile-quote")    
     student[:bio] = doc.css("div.bio-content.content-holder div.description-holder p").text    
     student
-    binding.pry
+    #binding.pry
     
     scraped_links = doc.css(".social-icon-container").children.css("a")    
     
