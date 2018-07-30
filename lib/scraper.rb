@@ -85,6 +85,12 @@ class Scraper
   def self.add_links(search)
     search.each do |link|
       if link.include?("twitter")
+        student[:twitter] = link
+      elsif link.include?("github")
+        student[:github] = link
+      elsif link.include?("linkedin")
+        student[:linkedin] = link
+      elsif link.include?
     end
   end
 end
