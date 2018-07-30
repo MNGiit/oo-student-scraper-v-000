@@ -71,7 +71,7 @@ class Scraper
   end
 
   def self.collect_links(doc)
-    return doc.css(".social-icon-container").children.css("a").map { |item| item.attribute('href').value}    
+    doc.css(".social-icon-container").children.css("a").map { |item| item.attribute('href').value}    
   end
 
 end
