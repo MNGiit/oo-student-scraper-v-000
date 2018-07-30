@@ -39,8 +39,6 @@ class Scraper
     student
     
     #old code
-    #html = File.read(profile_url)
-    #doc = Nokogiri::HTML(html)    
     #scraped_twitter = doc.css(".social-icon-container").children.css("a").attribute("href").value   
     #scraped_linkedin = doc.css(".social-icon-container").children.css("a")[1].attribute("href").value
     #scraped_blog = doc.css(".social-icon-container").children.css("a")[3].attribute("href").value 
@@ -108,7 +106,9 @@ class Scraper
   end
 
   def self.get_doc(profile_url)
-    doc = Nokogiri::HTML(File.read(profile_url)) #check old code for previous version    
+    doc = Nokogiri::HTML(File.read(profile_url)) #below is older way of doing it
+    #html = File.read(profile_url)
+    #doc = Nokogiri::HTML(html)       
   end
 end
 
