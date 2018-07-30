@@ -32,9 +32,9 @@ class Scraper
 
     student = {}
     
-    doc = get_doc(profile_url)
+    #doc = get_doc(profile_url)
     #doc = Nokogiri::HTML(File.read(profile_url)) #check old code for previous version
-    
+    add_items(get_doc(profile_url), student)
     add_items(doc, student)
     student
     
