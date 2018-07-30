@@ -36,6 +36,7 @@ class Scraper
     
     links_found = collect_links(doc) 
     add_links(collect_links(doc))
+    student
     binding.pry
     
     scraped_links = doc.css(".social-icon-container").children.css("a")    
