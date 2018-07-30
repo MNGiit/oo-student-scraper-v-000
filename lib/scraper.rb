@@ -70,7 +70,7 @@ class Scraper
     #student = {twitter: scraped_twitter, linkedin: scraped_linkedin, github: scraped_github, blog: scraped_blog, profile_quote: scraped_profile_quote, bio: scraped_bio}   
   end
 
-  def collect_links(doc)
+  def self.collect_links(doc)
     return doc.css(".social-icon-container").children.css("a").map { |item| item.attribute('href').value}    
   end
 
