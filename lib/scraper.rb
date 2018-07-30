@@ -36,7 +36,9 @@ class Scraper
     
     #links_found = collect_links(doc) 
     #add_links(links_found, student)
+    
     add_links(collect_links(doc), student)
+    student[:profile_quote] = doc.css(".profile-quote").text if doc.css(".profile-quote")    
     student
     binding.pry
     
@@ -50,8 +52,6 @@ class Scraper
     #if doc.css(".social-icon-container").children.css("a")[3]
     #  student[:blog] = doc.css(".social-icon-container").children.css("a")[3].attribute("href").value
     #end
-
-    student[:profile_quote] = doc.css(".profile-quote").text if doc.css(".profile-quote")
 
     if doc.css("div.bio-content.content-holder div.description-holder p").text
       student[:bio] = doc.css("div.bio-content.content-holder div.description-holder p").text
