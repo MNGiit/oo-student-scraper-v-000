@@ -31,9 +31,7 @@ class Scraper
   def self.scrape_profile_page(profile_url)
     student = {}
     add_items(get_doc(profile_url), student)
-
     student
-    
   end
 
   def self.get_doc(profile_url)
